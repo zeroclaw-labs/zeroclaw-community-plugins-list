@@ -1,0 +1,68 @@
+name: Link check
+
+# The only automation this repo needs: confirm the links still resolve.
+# We do not build, test, or audit listed projects — see README.
+on:
+  pull_request:
+    paths: ["README.md", ".github/workflows/link-check.yml"]
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays, 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check every link in README.md
+        run: |
+          set -uo pipefail
+
+          # Markdown inline links: [text](url). Keep http(s) only; skip
+          # in-page anchors and relative repo paths.
+          grep -oE '\]\(https?://[^) ]+\)' README.md \
+            | sed -E 's/^\]\(//; s/\)$//' \
+            | sort -u > /tmp/links.txt
+
+          total=$(wc -l < /tmp/links.txt | tr -d ' ')
+          echo "Checking $total unique link(s)"
+          failed=0
+
+          while IFS= read -r url; do
+            [ -n "$url" ] || continue
+
+            # HEAD first; some hosts reject it, so fall back to a ranged GET.
+            code=$(curl -sS -L -o /dev/null -w '%{http_code}' \
+                     --max-time 20 --retry 2 --retry-delay 3 \
+                     -A 'zeroclaw-community-plugins-list link-check' \
+                     -I "$url" || echo 000)
+
+            if [ "$code" = "000" ] || [ "$code" -ge 400 ]; then
+              code=$(curl -sS -L -o /dev/null -w '%{http_code}' \
+                       --max-time 20 --retry 2 --retry-delay 3 \
+                       -A 'zeroclaw-community-plugins-list link-check' \
+                       -r 0-0 "$url" || echo 000)
+            fi
+
+            if [ "$code" = "000" ] || [ "$code" -ge 400 ]; then
+              echo "::error::$code  $url"
+              failed=$((failed + 1))
+            else
+              echo "ok $code  $url"
+            fi
+
+            sleep 1   # be a polite crawler
+          done < /tmp/links.txt
+
+          echo
+          if [ "$failed" -gt 0 ]; then
+            echo "$failed of $total link(s) failed."
+            echo "A dead link usually means the project moved or was deleted;"
+            echo "open a 'Remove or correct an entry' issue to fix the listing."
+            exit 1
+          fi
+          echo "All $total link(s) resolved."

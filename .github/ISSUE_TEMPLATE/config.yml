@@ -1,0 +1,20 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Add your plugin to the list
+    url: https://github.com/zeroclaw-labs/zeroclaw-community-plugins-list/blob/main/CONTRIBUTING.md
+    about: Additions are made by pull request, not by issue — one row in a table.
+
+  - name: A listed plugin is broken
+    url: https://github.com/zeroclaw-labs/zeroclaw-community-plugins-list#-we-do-not-maintain-these
+    about: >
+      We do not maintain listed projects. Open the issue on that project's own
+      repository. Use "Remove or correct an entry" here only if the listing
+      itself is wrong.
+
+  - name: ZeroClaw itself has a bug
+    url: https://github.com/zeroclaw-labs/zeroclaw/issues
+    about: Issues with the agent, the CLI, or the plugin host belong upstream.
+
+  - name: Official plugin registry
+    url: https://github.com/zeroclaw-labs/zeroclaw-plugins
+    about: Plugins built and published by ZeroClaw Labs, installable by name.

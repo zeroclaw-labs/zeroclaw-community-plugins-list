@@ -1,0 +1,44 @@
+name: Remove or correct an entry
+description: Report a dead link, a misleading description, a malicious project, or ask to delist your own.
+title: "remove: <plugin-name>"
+labels: ["listing"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Which entry
+      description: Name and link of the listed project.
+      placeholder: my-plugin — https://github.com/someone/my-plugin
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Reason
+      options:
+        - Link is dead (404, deleted, or made private)
+        - Repository is archived or abandoned
+        - Description is inaccurate or misleading
+        - I am the author and want it delisted
+        - Project is malicious or hostile
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: >
+        Anything that helps us act. If you are the author asking for removal,
+        just say so — we do not require a reason.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: >
+        **Security note:** if a listed project is actively malicious, please
+        also report it to GitHub. This repository only controls whether a link
+        appears in a list; it cannot take down the project itself.
