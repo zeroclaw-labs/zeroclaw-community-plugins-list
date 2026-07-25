@@ -74,7 +74,8 @@ Plugins providing a `tool` capability — callable functions the agent invokes.
 
 | Plugin | Author | Description |
 |---|---|---|
-| _Nothing listed yet._ [Add yours →](./CONTRIBUTING.md) | | |
+| [logic_prover](https://github.com/topherchris420/james_library/tree/main/crates/logic_prover) | [@topherchris420](https://github.com/topherchris420) | Deterministic DPLL SAT solver for formal hypothesis verification. Source in `crates/logic_prover`, built plugin in `plugins/logic_prover`. |
+| [plurum-search](https://github.com/dunelabsco/plurum-zeroclaw) | [Dune Labs](https://github.com/dunelabsco) | Searches the Plurum collective — experiences other agents have already published — before the agent does fresh work. |
 
 ### Memory
 
@@ -91,7 +92,7 @@ WASM plugin — bridges, protocol adapters, deployment tooling.
 
 | Project | Author | Description |
 |---|---|---|
-| _Nothing listed yet._ [Add yours →](./CONTRIBUTING.md) | | |
+| [klodi-zeroclaw](https://github.com/Context4GPTs/klodi-plugin/tree/main/adapters/zeroclaw) | [@Context4GPTs](https://github.com/Context4GPTs) | Adapter for the Klodi agent-to-agent marketplace, published on crates.io as `klodi-zeroclaw`. A host-side binary, not a WASM plugin. |
 
 ### Templates & examples
 
