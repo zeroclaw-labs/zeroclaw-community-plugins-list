@@ -87,12 +87,17 @@ Plugins providing a `tool` capability — callable functions the agent invokes.
 
 ### Solana & blockchain
 
-Chain-facing `tool` plugins. Most arrived together through a Superteam bounty in
-July 2026, which is why several independent takes on the same idea —
-`token-risk-check` especially — sit side by side. They are listed rather than
-ranked; comparing them is left to you.
+Chain-facing `tool` plugins. Most arrived together through
+[Build Solana-native plugins for ZeroClaw](https://superteam.fun/earn/listing/zeroclaw),
+a $5,000 bounty sponsored by Superteam Brasil, which is why several independent
+takes on the same idea — `token-risk-check` especially — sit side by side.
 
-Many in this section carry **no license file**, which means default copyright
+**That bounty is still running; winners are announced 21 August 2026.** Nothing
+in this section is a placement, a shortlist, or a signal about judging, and the
+order is alphabetical by repository name. These are listed rather than ranked;
+comparing them is left to you.
+
+Many entries here carry **no license file**, which means default copyright
 applies and you have no right to use them. Check before you build.
 
 | Plugin(s) | Author | Description |

@@ -40,6 +40,19 @@ A maintainer will decline if the repository is empty, is a fork with no
 substantive changes, is unrelated to ZeroClaw, is malware, or if the description
 misrepresents what it does.
 
+## Are you in the Superteam bounty? Keep your pull request open
+
+**Do not close your `zeroclaw-plugins` pull request.** "Build Solana-native
+plugins for ZeroClaw", sponsored by Superteam Brasil, runs until **21 August
+2026**, and your pull request is part of how that work gets read. Closing it
+early can only cost you.
+
+Listing here is available to you today and it is **additive**. It does not
+replace your submission, does not affect judging, and is not a withdrawal. What
+it gives you is a durable home and an audience for the plugin no matter how the
+bounty lands — including if it does not place. Add your row whenever you like
+and leave the pull request alone.
+
 ## Were you sent here from a zeroclaw-plugins pull request?
 
 Then you are in the right place, and there is nothing wrong with your plugin.
@@ -55,7 +68,8 @@ you ship fixes without waiting on our review; and nothing you build is pinned to
 our CI. You give up `zeroclaw plugin search` discovery, and you own support.
 
 To move over: open a PR here adding your row, then close the registry PR with a
-link to it.
+link to it — **unless you are in the Superteam bounty**, in which case leave
+that pull request open until judging concludes on 21 August 2026. See above.
 
 ## What we do not do
 
