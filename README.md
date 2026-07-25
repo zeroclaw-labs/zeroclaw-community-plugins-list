@@ -39,17 +39,25 @@ registry: [`zeroclaw-labs/zeroclaw-plugins`](https://github.com/zeroclaw-labs/ze
 
 ## Official vs. community
 
+**This list is where community plugins go.** The official registry is a small
+set of plugins ZeroClaw Labs builds, publishes, and takes responsibility for —
+it is not open intake, because every plugin in it is one we have to keep
+working.
+
 |  | [Official registry](https://github.com/zeroclaw-labs/zeroclaw-plugins) | This list |
 |---|---|---|
-| Who hosts the code | ZeroClaw Labs, in-repo | The author, in their own repo |
-| Who builds the artifact | ZeroClaw Labs CI | The author |
+| Who hosts the code | ZeroClaw Labs, in-repo | You, in your own repo |
+| Who builds the artifact | ZeroClaw Labs CI | You |
+| Who fixes it when it breaks | ZeroClaw Labs | You |
+| Who owns the release cadence | ZeroClaw Labs | You — ship whenever you like |
 | Discoverable by `zeroclaw plugin search` | Yes, by default | No — browse this page |
-| Installed by `zeroclaw plugin install <name>` | Yes | Only via the author's own registry URL or a local path |
+| Installed by `zeroclaw plugin install <name>` | Yes | Via your own registry URL or a local path |
 | Reviewed by ZeroClaw Labs | Structure + build validation in CI | Link resolves; nothing more |
 
-If you want your plugin in the official registry instead, follow
-[Add a plugin](https://github.com/zeroclaw-labs/zeroclaw-plugins#add-a-plugin)
-over there.
+Listing here costs you nothing and keeps you in control: no waiting on our
+review, no version pinned to our release train, no rule that your plugin must
+keep compiling against our CI. The trade is that discovery is this page rather
+than `zeroclaw plugin search`.
 
 ---
 
@@ -76,6 +84,39 @@ Plugins providing a `tool` capability — callable functions the agent invokes.
 |---|---|---|
 | [logic_prover](https://github.com/topherchris420/james_library/tree/main/crates/logic_prover) | [@topherchris420](https://github.com/topherchris420) | Deterministic DPLL SAT solver for formal hypothesis verification. Source in `crates/logic_prover`, built plugin in `plugins/logic_prover`. |
 | [plurum-search](https://github.com/dunelabsco/plurum-zeroclaw) | [Dune Labs](https://github.com/dunelabsco) | Searches the Plurum collective — experiences other agents have already published — before the agent does fresh work. |
+
+### Solana & blockchain
+
+Chain-facing `tool` plugins. Most arrived together through a Superteam bounty in
+July 2026, which is why several independent takes on the same idea —
+`token-risk-check` especially — sit side by side. They are listed rather than
+ranked; comparing them is left to you.
+
+Many in this section carry **no license file**, which means default copyright
+applies and you have no right to use them. Check before you build.
+
+| Plugin(s) | Author | Description |
+|---|---|---|
+| [kamino-sentinel](https://github.com/shud26/kamino-sentinel) | [@shud26](https://github.com/shud26) | Kamino lending-health sentinel. |
+| [solana-lens](https://github.com/Acezhang08/solana-lens) | [@Acezhang08](https://github.com/Acezhang08) | Balances, transactions, and one-call wallet activity reports over sandboxed `wasi:http`. |
+| [solana-zeroclaw-plugins](https://github.com/Jorchspace/solana-zeroclaw-plugins) | [@Jorchspace](https://github.com/Jorchspace) | SNS name resolution and SPL token risk checks. |
+| [zeroclaw-solana](https://github.com/Fianko-codes/zeroclaw-solana) | [@Fianko-codes](https://github.com/Fianko-codes) | No-custody Solana Pay request building. |
+| [zeroclaw-solana](https://github.com/muhammetcintosun2123/zeroclaw-solana) | [@muhammetcintosun2123](https://github.com/muhammetcintosun2123) | Offline Merkle/signature verification and transaction construction; declares no permissions. |
+| [zeroclaw-solana](https://github.com/tuffagent/zeroclaw-solana) | [@tuffagent](https://github.com/tuffagent) | Token risk check. |
+| [zeroclaw-solana-inspector](https://github.com/TakoVHS/zeroclaw-solana-inspector) | [@TakoVHS](https://github.com/TakoVHS) | Solana RPC endpoint health inspection. |
+| [zeroclaw-solana-plugins](https://github.com/chasdaddy/zeroclaw-solana-plugins) | [@chasdaddy](https://github.com/chasdaddy) | Read-only wallet balances, SPL holdings, Jupiter DeFi quotes, transaction lookup. No keys, no signing. |
+| [zeroclaw-solana-plugins](https://github.com/ertanyeni/zeroclaw-solana-plugins) | [@ertanyeni](https://github.com/ertanyeni) | SNS resolve, Solana Pay request, token risk check, unsigned transfer. |
+| [zeroclaw-solana-plugins](https://github.com/luongs3/zeroclaw-solana-plugins) | [@luongs3](https://github.com/luongs3) | Durable-nonce unsigned transfers, chain-verified payment watch, capped x402 settlement. Pure-Rust, no `solana-sdk`. |
+| [zeroclaw-solana-plugins](https://github.com/peterpetir123/zeroclaw-solana-plugins) | [@peterpetir123](https://github.com/peterpetir123) | SPL transfer build and token risk check. |
+| [zeroclaw-solana-plugins](https://github.com/ulsreall/zeroclaw-solana-plugins) | [@ulsreall](https://github.com/ulsreall) | Token risk check, Solana Pay request, payment watch, plus a shared `solana-core` crate. |
+| [Zeroclaw-solana-plugins](https://github.com/Triwidodo99/Zeroclaw-solana-plugins) | [@Triwidodo99](https://github.com/Triwidodo99) | Token risk check, wallet narrate, SNS resolve, portfolio brief, lending health. |
+| [zeroclaw-solana-plugins-v2](https://github.com/sushtupac/zeroclaw-solana-plugins-v2) | [@sushtupac](https://github.com/sushtupac) | Solana Pay requests, payment watch, SPL transfer build, Squads proposals, token risk check. |
+| [zeroclaw-solana-risk-gate](https://github.com/AntonsBB/zeroclaw-solana-risk-gate) | [@AntonsBB](https://github.com/AntonsBB) | Deterministic, read-only mint and Token-2022 risk evidence. |
+| [zeroclaw-solana-safety-stack](https://github.com/xDzaky/zeroclaw-solana-safety-stack) | [@xDzaky](https://github.com/xDzaky) | Token risk check and wallet narrate, over a shared `core-solana-wasm` substrate. |
+| [zeroclaw-solana-toolkit](https://github.com/NEX-S/zeroclaw-solana-toolkit) | [@NEX-S](https://github.com/NEX-S) | RPC toolkit: balance, latest blockhash, token accounts, transaction lookup, devnet airdrop. |
+| [zeroclaw-token-risk-check](https://github.com/annaumixyz/zeroclaw-token-risk-check) | [@annaumixyz](https://github.com/annaumixyz) | Token risk check. |
+| [zeroclaw-token-risk-check](https://github.com/hardcorexax-source/zeroclaw-token-risk-check) | [@hardcorexax-source](https://github.com/hardcorexax-source) | Token risk check. |
+| [zeroclaw-token-risk-check](https://github.com/vellichorlabs/zeroclaw-token-risk-check) | [@vellichorlabs](https://github.com/vellichorlabs) | Rug/safety check over mint and freeze authority, holder concentration, and Token-2022 extensions; RED/AMBER/GREEN verdict from on-chain facts. |
 
 ### Memory
 
@@ -187,8 +228,15 @@ document the security model in full.
 
 ## Adding your plugin
 
-Open a pull request — see [CONTRIBUTING.md](./CONTRIBUTING.md) for the format
-and the (short) acceptance criteria.
+Open a pull request adding one row — see [CONTRIBUTING.md](./CONTRIBUTING.md)
+for the format and the (short) acceptance criteria. You keep your code, your
+copyright, and your release schedule; we keep a link.
+
+If you opened a pull request against the
+[official registry](https://github.com/zeroclaw-labs/zeroclaw-plugins) and were
+pointed here, see
+[Were you sent here from a zeroclaw-plugins pull request?](./CONTRIBUTING.md#were-you-sent-here-from-a-zeroclaw-plugins-pull-request)
+— your plugin is fine; the registry is just not open intake.
 
 ## Removing an entry
 

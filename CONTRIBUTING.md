@@ -40,16 +40,29 @@ A maintainer will decline if the repository is empty, is a fork with no
 substantive changes, is unrelated to ZeroClaw, is malware, or if the description
 misrepresents what it does.
 
+## Were you sent here from a zeroclaw-plugins pull request?
+
+Then you are in the right place, and there is nothing wrong with your plugin.
+
+The [official registry](https://github.com/zeroclaw-labs/zeroclaw-plugins) is
+not open intake. Everything merged there becomes something ZeroClaw Labs builds
+in CI, publishes as a release artifact, and has to keep working — so it stays
+deliberately small. That is a capacity limit on us, not a judgment of your work.
+
+Keeping your plugin in your own repository and listing it here is better for you
+in most respects: you keep the copyright, the release cadence, and the roadmap;
+you ship fixes without waiting on our review; and nothing you build is pinned to
+our CI. You give up `zeroclaw plugin search` discovery, and you own support.
+
+To move over: open a PR here adding your row, then close the registry PR with a
+link to it.
+
 ## What we do not do
 
 We do not review your code. We do not test that it builds. We do not verify the
 author's identity. Merging your PR is not an endorsement, and the README says so
 prominently — please do not describe a listing here as ZeroClaw Labs having
 approved, verified, certified, or partnered with your project.
-
-If you want a plugin that ZeroClaw Labs builds and publishes, contribute it to
-the [official registry](https://github.com/zeroclaw-labs/zeroclaw-plugins#add-a-plugin)
-instead. That path has real CI and real review.
 
 ## Keeping your entry accurate
 
