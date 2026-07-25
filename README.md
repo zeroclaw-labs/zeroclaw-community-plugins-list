@@ -194,6 +194,25 @@ export ZEROCLAW_PLUGIN_REGISTRY_URL=https://<author-host>/registry.json
 Note that this replaces the official registry for that session rather than
 adding to it.
 
+### Want one-command install for your plugin?
+
+**This list does not host a registry index, and there are no plans to add one.**
+It is a page of links; install stays between you and the person installing.
+
+If you want `zeroclaw plugin install <name> --registry <your-url>` to work, you
+publish the index yourself — it is a small JSON file plus a release asset, and
+the [distributing-plugins guide](https://github.com/zeroclaw-labs/zeroclaw/blob/master/docs/book/src/plugins/distributing-plugins.md)
+walks the whole path, including Ed25519 signing. You keep control of your
+release cadence and your artifacts, and you can do it today without waiting on
+anyone here.
+
+Two constraints worth knowing before you start, both enforced at install:
+
+- A registry entry's `name` and `version` must match your `manifest.toml`
+  **exactly** — an index cannot rename or re-version your plugin.
+- Your archive needs a root-level `manifest.toml`, or exactly one nested
+  directory containing one. Zero or several is a rejected archive.
+
 ---
 
 ## Before you install
