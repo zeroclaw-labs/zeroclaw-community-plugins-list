@@ -104,6 +104,7 @@ applies and you have no right to use them. Check before you build.
 |---|---|---|
 | [kamino-sentinel](https://github.com/shud26/kamino-sentinel) | [@shud26](https://github.com/shud26) | Kamino lending-health sentinel. |
 | [solana-lens](https://github.com/Acezhang08/solana-lens) | [@Acezhang08](https://github.com/Acezhang08) | Balances, transactions, and one-call wallet activity reports over sandboxed `wasi:http`. |
+| [solana-portfolio-sentinel](https://github.com/ZiBibro/solana-portfolio-sentinel) | [@ZiBibro](https://github.com/ZiBibro) | Read-only Kamino/MarginFi lending health and stake account monitoring, plus an unsigned stake transaction builder that holds no keys. |
 | [solana-zeroclaw-plugins](https://github.com/Jorchspace/solana-zeroclaw-plugins) | [@Jorchspace](https://github.com/Jorchspace) | SNS name resolution and SPL token risk checks. |
 | [zeroclaw-solana](https://github.com/Fianko-codes/zeroclaw-solana) | [@Fianko-codes](https://github.com/Fianko-codes) | No-custody Solana Pay request building. |
 | [zeroclaw-solana](https://github.com/muhammetcintosun2123/zeroclaw-solana) | [@muhammetcintosun2123](https://github.com/muhammetcintosun2123) | Offline Merkle/signature verification and transaction construction; declares no permissions. |
